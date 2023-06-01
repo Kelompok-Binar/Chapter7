@@ -39,12 +39,13 @@ public class Schedule {
     @Autowired
     DataTransactionService dataTransactionService;
     @Transactional
-    //digunakan untuk mengingatkan film yang akan mulai
+    //digunakan untuk menghapus transaksi
+    //@Scheduled(cron = "")
     @Scheduled(fixedDelay = 1000, initialDelay = 2000)
     public void Schedule() throws ParseException {
 
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
-        String resetData = "17:32:10";
+        String resetData = "00:00:00";
         //String date2String = "00:00:00";
         Time currentTime = new Time(System.currentTimeMillis());
         System.out.println(currentTime);
